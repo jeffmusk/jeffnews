@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NoticeService} from '../../shared/service/notice.service';
 
 @Component({
   selector: 'app-notices',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private noticeService:NoticeService) { }
 
   ngOnInit() {
   }
