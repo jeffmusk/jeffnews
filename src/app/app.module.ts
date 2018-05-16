@@ -9,14 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './comp/navbar/navbar.component';
 import { NoticesComponent } from './comp/notices/notices.component';
-import { AddnoticeComponent } from './comp/addnotice/addnotice.component';
+import { AddNoticeComponent } from './comp/notices/add-notice/add-notice.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NoticesComponent,
-    AddnoticeComponent
+    AddNoticeComponent
+    
   ],
   imports: [
     BrowserModule,
