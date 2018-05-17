@@ -10,8 +10,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './comp/navbar/navbar.component';
 import { NoticesComponent } from './comp/notices/notices.component';
 import { AddNoticeComponent } from './comp/notices/add-notice/add-notice.component';
-import { FormsModule} from '@angular/forms';
 import {NoticeService} from './shared/service/notice.service';
+import { FormsModule }   from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {NoticeService} from './shared/service/notice.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [NoticeService],
   bootstrap: [AppComponent]
