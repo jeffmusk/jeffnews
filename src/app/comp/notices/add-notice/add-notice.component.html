@@ -1,0 +1,47 @@
+
+<form #noticeForm="ngForm" (ngSubmit)="onSubmit(noticeForm)">
+<input type="hidden" name="$key" [(ngModel)]="noticeService.selectedNotice.$key" >
+<div class="row">
+	<div class="col-md-8">
+	  <div class="form-group">
+	    <label for="titular">Titular</label>
+	    <input  class="form-control"   name="titular"
+	     placeholder="Titular" #titular="ngModel" [(ngModel)]="noticeService.selectedNotice.titular" >
+	  </div>
+	
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label for="fecha">fecha</label>
+			<input type="text" class="form-control" id="fecha"  name="fecha"
+	    placeholder="Fecha" #fecha="ngModel" [(ngModel)]="noticeService.selectedNotice.fecha">	
+		</div>
+	</div>
+</div>
+
+  <div class="form-group">
+    <label for="contenido">Contenido</label>
+    <textarea class="form-control" name="contenido" id="contenido"  rows="2"
+    #contenido="ngModel" [(ngModel)]="noticeService.selectedNotice.contenido"></textarea>
+  </div>
+ 	<div class="row">
+ 		<div class="col-md-1">
+ 			
+ 		</div>
+ 		<div class="col-md-11 form-group">
+ 			<input type="text" aria-describedby="imgHelp" class="form-control" name="img"
+ 			#img="ngModel" [(ngModel)]="noticeService.selectedNotice.img">
+ 			<small id="imgHelp" class="form-text text-muted">Link de la imagen</small>
+ 		</div>
+ 	</div>
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" #favoritos="ngModel" 
+    [(ngModel)]="noticeService.selectedNotice.favoritos" name="favoritos">
+    <label class="form-check-label" for="exampleCheck1"  >Agregar a favoritos</label>
+  </div>
+
+  <div class="boton text-center">
+  	<button type="submit" class="btn btn-primary px-5" [disabled]="!noticeForm.valid">Agregar</button>
+  </div> 
+</form>
