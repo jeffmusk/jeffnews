@@ -13,7 +13,8 @@ import { AddNoticeComponent } from './comp/notices/add-notice/add-notice.compone
 import {NoticeService} from './shared/service/notice.service';
 import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,9 @@ import { CommonModule } from '@angular/common';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [NoticeService],
   bootstrap: [AppComponent]
