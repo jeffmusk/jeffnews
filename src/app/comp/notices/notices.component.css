@@ -1,0 +1,9 @@
+.botones{
+	display: flex;
+	flex-direction: column;
+	flex-flow: row wrap;
+	justify-content:space-around;
+}
+
+.btn-accion{
+}

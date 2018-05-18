@@ -11,16 +11,21 @@ import { NavbarComponent } from './comp/navbar/navbar.component';
 import { NoticesComponent } from './comp/notices/notices.component';
 import { AddNoticeComponent } from './comp/notices/add-notice/add-notice.component';
 import {NoticeService} from './shared/service/notice.service';
+import {ApiService} from './shared/service/api/api.service';
 import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Error404Component } from './comp/error404/error404.component'; 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NoticesComponent,
-    AddNoticeComponent
+    AddNoticeComponent,
+    Error404Component
     
   ],
   imports: [
@@ -31,9 +36,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [NoticeService],
+  providers: [NoticeService,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

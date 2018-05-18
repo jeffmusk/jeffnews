@@ -1,7 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {NoticesComponent} from './comp/notices/notices.component';
+import {AddNoticeComponent} from './comp/notices/add-notice/add-notice.component';
+import {Error404Component} from './comp/error404/error404.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+	{	
+		path: "",
+		component: NoticesComponent	
+	},
+	{
+		path: "notices",
+		component: NoticesComponent
+	},
+	{
+		path:"guardadas",
+		component: AddNoticeComponent
+	},
+
+	
+	{
+		path: "**",
+		redirectTo: "404"
+	},
+	{
+		path: "404",
+		component: Error404Component
+	}
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -11,7 +11,8 @@ export const environment = {
     projectId: "jeffmeganews",
     storageBucket: "",
     messagingSenderId: "139932751734"
-  }
+  },
+  apiKey: "0c60ca0732284356bbccab4752ae45fa"
 };
 
 /*

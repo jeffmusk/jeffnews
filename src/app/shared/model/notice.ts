@@ -1,8 +1,10 @@
 export class Notice {
-	$key:string;
-	titular:string;
-	contenido:string;
-	fecha:string;
-	img?:string;
-	favoritos?:boolean
+		$key?:string;
+		author?: string ;​
+		description?: string ;
+	​​	publishedAt: string;
+	​​​	source?: string;​​​
+		title: string;
+	​​	url: string;
+		urlToImage?: string;
 }
