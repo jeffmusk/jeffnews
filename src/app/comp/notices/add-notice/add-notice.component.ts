@@ -3,6 +3,7 @@ import {NoticeService} from '../../../shared/service/notice.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {Notice} from '../../../shared/model/notice';
+import {ReversePipe} from 'ngx-pipes';
 
 @Component({
   selector: 'app-add-notice',
@@ -11,6 +12,7 @@ import {Notice} from '../../../shared/model/notice';
 })
 export class AddNoticeComponent implements OnInit {
 saveNoticesList:Notice[];
+
 
   constructor(private noticeService:NoticeService,
     private toastr:ToastrService
@@ -28,6 +30,7 @@ saveNoticesList:Notice[];
         })
       });
   }
+
   onDeleteNotice(n){
     if (confirm("¿Desea eliminar la noticia?")) {
       this.noticeService.deleteNotice(n); 

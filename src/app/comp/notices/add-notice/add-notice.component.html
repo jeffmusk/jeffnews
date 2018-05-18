@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="row">
-	  <div class="col-4">
+	  <div class="col-md-4">
 	    <div class="list-group" id="list-tab" role="tablist">
 	      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
 	      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
@@ -13,7 +13,7 @@
 	      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
 	    </div>
 	  </div>
-	  <div class="col-8 bg-dark p-4 text-white">
+	  <div class="col-md-8 bg-dark p-4 text-white">
 	    <div class="tab-content" id="nav-tabContent">
 	      <div class="tab-pane fade  text-justify show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list ">
 	      	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis sem eros, vitae egestas odio dignissim in. Curabitur eros diam, sagittis non nulla ac, sagittis feugiat sapien. Mauris euismod varius diam, hendrerit lobortis est. Mauris in lectus est. Aliquam nec quam dolor. Quisque a lectus interdum, pharetra purus at, lacinia arcu. Duis rhoncus semper rhoncus. Nam in justo sed leo varius vestibulum sed vel lectus. Etiam imperdiet venenatis malesuada. 
@@ -36,7 +36,7 @@
 	<div class="row mt-5">
 	<div class="col-sm-1"></div>
 	<div class="col-sm-10">
-		<div class="list-group mt-3" *ngFor="let notice of saveNoticesList">
+		<div class="list-group mt-3" *ngFor="let notice of saveNoticesList | reverse">
 		  <a [href]="notice.url" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
 				<div class="row">
 					<div class="col-lg-3  col-md-4 ">

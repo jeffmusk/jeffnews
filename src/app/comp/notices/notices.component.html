@@ -6,10 +6,10 @@
 <div class="container">
 
 	<div class="row justify-content-around">
-		<div class="card-continer mt-3 " *ngFor="let n of apiNoticeList.slice().reverse()" style="width: 19rem;" >
+		<div class="card-continer mt-3 " *ngFor="let n of apiNoticeList" style="width: 19rem;" >
 				<div class="card  ml-2"  >
 					<div class="card-header bg-dark">
-						<h5 class="card-title text-center text-white"> {{i}} :.{{n.title}}</h5>
+						<h5 class="card-title text-center text-white"> {{n.title}}</h5>
 					</div>
 					<div *ngIf="n.urlToImage == null;else other_content">
 					    <img class="card-img-top text-center" src="http://www.losprincipios.org/images/default.jpg" alt="">

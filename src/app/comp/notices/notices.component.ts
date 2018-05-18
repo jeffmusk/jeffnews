@@ -4,10 +4,12 @@ import {ApiService} from '../../shared/service/api/api.service';
 import {Notice} from '../../shared/model/notice';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-notices',
   templateUrl: './notices.component.html',
   styleUrls: ['./notices.component.css']
+
 })
 export class NoticesComponent implements OnInit {
 	noticeList:Notice[];
@@ -30,8 +32,6 @@ export class NoticesComponent implements OnInit {
           this.apiNoticeList.push(notice) ;
         })
       });
-    this.lastNotice =  this.apiNoticeList.splice.reverse();
-    	console.log(this.lastNotice);
       setTimeout(()=> {
       	this.loanding = true; 
       },1500);
@@ -40,7 +40,7 @@ export class NoticesComponent implements OnInit {
 
    onSave(n:Notice){
     this.noticeService.saveNotice(n);
-    this.toastr.warning("Guardada");
+    this.toastr.success("correctamente","Noticia Guardada",{timeOut: 1200});
   }
 
 }
