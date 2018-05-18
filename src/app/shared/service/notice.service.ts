@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Notice} from '../model/notice';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Observable } from "rxjs/Observable";
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,19 +26,6 @@ export class NoticeService {
          urlToImage:n.urlToImage,
          publishedAt:n.publishedAt
       });
-   }
-
-  
-
-   createNotice(n:Notice){
-     	this.noticeList.push({
-   		author:n.author,
-         title:n.title,
-         description:n.description,
-         url:n.url,
-         urlToImage:n.urlToImage,
-         publishedAt:n.publishedAt
-   	});
    }
 
    updateNotice(notice:Notice){

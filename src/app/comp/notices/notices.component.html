@@ -1,15 +1,15 @@
-		<div class="progress">
-	  	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+		<div class="progress" *ngIf="!loanding">
+	  	<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
 		  </div>
 		</div>
 
 <div class="container">
 
 	<div class="row justify-content-around">
-		<div class="card-continer mt-3 " *ngFor="let n of apiNoticeList" style="width: 19rem;" >
+		<div class="card-continer mt-3 " *ngFor="let n of apiNoticeList.slice().reverse()" style="width: 19rem;" >
 				<div class="card  ml-2"  >
 					<div class="card-header bg-dark">
-						<h5 class="card-title text-center text-white">{{n.title}}</h5>
+						<h5 class="card-title text-center text-white"> {{i}} :.{{n.title}}</h5>
 					</div>
 					<div *ngIf="n.urlToImage == null;else other_content">
 					    <img class="card-img-top text-center" src="http://www.losprincipios.org/images/default.jpg" alt="">

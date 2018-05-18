@@ -12,43 +12,35 @@ import { ToastrService } from 'ngx-toastr';
 export class NoticesComponent implements OnInit {
 	noticeList:Notice[];
   apiNoticeList;
-  loanding:number;
-  constructor(public noticeService:NoticeService ,
+  lastNotice;
+  loanding:boolean;
+
+  constructor(private noticeService:NoticeService ,
     private toastr:ToastrService,
     private apiService:ApiService) { }
 
   ngOnInit() {
-    this.loanding = 0; 
     this.noticeService.getNotice();
 
     this.apiNoticeList = [];
+
     this.apiService.getApiNotice()
       .subscribe(n => {
         n.articles.forEach(notice => {
           this.apiNoticeList.push(notice) ;
         })
       });
-      console.log(this.loanding);
-
-      f
-
+    this.lastNotice =  this.apiNoticeList.splice.reverse();
+    	console.log(this.lastNotice);
+      setTimeout(()=> {
+      	this.loanding = true; 
+      },1500);
+	   
   }
-  
-  onSave(n:Notice){
+
+   onSave(n:Notice){
     this.noticeService.saveNotice(n);
     this.toastr.warning("Guardada");
   }
-/*
-  onEdit(n:Notice){
-    this.noticeService.selectedNotice = Object.assign({},n) ;
 
-  }
-
-  onDelete($key){
-    if( confirm("Esta seguro de querer eliminar esta noticia") == true){
-      this.noticeService.deleteNotice($key)
-      this.toastr.warning("Eliminado")
-    }
-  }
-*/
 }
