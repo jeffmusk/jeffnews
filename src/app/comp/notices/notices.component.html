@@ -7,16 +7,18 @@
 
 	<div class="row "  >
 		<div class="col-12 mt-4 ">
-			<mat-form-field>
-			  <mat-select placeholder="Fuente" [formControl]="noticeControl">
-			    <mat-optgroup *ngFor="let group of sources" [label]="group.name"
-			                  [disabled]="group.disabled">
-			      <mat-option *ngFor="let source of group.noticeSource" [value]="source.value" (click)="onUpdate(source.value)">
-			        {{ source.viewValue }}
-			      </mat-option>
-			    </mat-optgroup>
-			  </mat-select>
-			</mat-form-field>
+			<mat-card>				 	
+				<mat-form-field>
+				  <mat-select placeholder="Fuente" [formControl]="noticeControl" >
+				    <mat-optgroup *ngFor="let group of sources" [label]="group.name">
+				      <mat-option *ngFor="let source of group.noticeSource" [value]="source.value" (click)="onUpdate(source)">
+				        {{ source.viewValue }}
+				      </mat-option>
+				    </mat-optgroup>
+				  </mat-select>
+				</mat-form-field>
+			</mat-card>
+
 		</div>
 	</div>
 

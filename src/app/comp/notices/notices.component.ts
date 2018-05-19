@@ -17,6 +17,7 @@ export class NoticesComponent implements OnInit {
   apiNoticeList;
   lastNotice;
   loanding:boolean;
+  currentSource:string;
 
   constructor(private noticeService:NoticeService ,
     private toastr:ToastrService,
@@ -33,17 +34,20 @@ export class NoticesComponent implements OnInit {
       });
       setTimeout(()=> {
       	this.loanding = true; 
-      },1500);
+      },1500);     
+      this.currentSource = "Google News(ar)";
   }
 
     onUpdate(f){
       this.apiNoticeList = [];
-      this.apiService.getApiNotice(f)
+      this.apiService.getApiNotice(f.value)
       .subscribe(n => {
         n.articles.forEach(notice => {
           this.apiNoticeList.push(notice) ;
         })
       });
+      
+      this.currentSource = f.viewValue;
     }
 
 
