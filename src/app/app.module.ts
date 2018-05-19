@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {environment} from '../environments/environment'
 //fire base
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,8 +23,8 @@ import {NgPipesModule} from 'ngx-pipes';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { RegistrationComponent } from './comp/sesion/registration/registration.component';
 import { LoginComponent } from './comp/sesion/login/login.component';
+import { RegistrationComponent } from './comp/sesion/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { LoginComponent } from './comp/sesion/login/login.component';
     MatSelectModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    AngularFireAuthModule
   ],
   providers: [NoticeService,ApiService],
   bootstrap: [AppComponent]

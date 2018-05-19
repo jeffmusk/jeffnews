@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {NoticesComponent} from './comp/notices/notices.component';
 import {AddNoticeComponent} from './comp/notices/add-notice/add-notice.component';
 import {Error404Component} from './comp/error404/error404.component';
+import {LoginComponent} from './comp/sesion/login/login.component';
+import {RegistrationComponent} from './comp/sesion/registration/registration.component';
+
 
 const routes: Routes = [
 	{	
@@ -17,8 +20,14 @@ const routes: Routes = [
 		path:"guardadas",
 		component: AddNoticeComponent
 	},
-
-	
+	{
+		path: "login",
+		component: LoginComponent
+	},
+	{
+		path: "registration",
+		component: RegistrationComponent
+	},
 	{
 		path: "**",
 		redirectTo: "404"
