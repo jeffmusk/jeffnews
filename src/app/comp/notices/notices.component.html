@@ -5,28 +5,21 @@
 
 <div class="container">
 
-	<div class="row my-3 justify-content-center bg-dark">
-	  
-		<div class="col-xm-8">
-			<form>
-			  <div class="form-group">
-					<h4 class="text-white text-center">Fuente</h4>
-			    <select class="form-control" id="exampleFormControlSelect1">
-			      <option>Google News (Argentina)</option>
-			      <option (click)="onAlert(2)" >Hacker News (en)</option>
-			      <option>CNN (español)</option>
-			      <option>4</option>
-			      <option>5</option>
-			    </select>
-			  </div>
-			</form>
-		</div>
-		<div class="col-sm-12 my-auto ">
-			<button class="btn btn-info ">
-				Consultar
-			</button>
+	<div class="row "  >
+		<div class="col-12 mt-4 ">
+			<mat-form-field>
+			  <mat-select placeholder="Fuente" [formControl]="noticeControl">
+			    <mat-optgroup *ngFor="let group of sources" [label]="group.name"
+			                  [disabled]="group.disabled">
+			      <mat-option *ngFor="let source of group.noticeSource" [value]="source.value" (click)="onUpdate(source.value)">
+			        {{ source.viewValue }}
+			      </mat-option>
+			    </mat-optgroup>
+			  </mat-select>
+			</mat-form-field>
 		</div>
 	</div>
+
 
 	<div class="row justify-content-around">
 		<div class="card-continer mt-3 " *ngFor="let n of apiNoticeList" style="width: 19rem;" >

@@ -12,13 +12,14 @@ import { NoticesComponent } from './comp/notices/notices.component';
 import { AddNoticeComponent } from './comp/notices/add-notice/add-notice.component';
 import {NoticeService} from './shared/service/notice.service';
 import {ApiService} from './shared/service/api/api.service';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule , ReactiveFormsModule}   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Error404Component } from './comp/error404/error404.component'; 
 import { HttpClientModule } from '@angular/common/http';
 import {NgPipesModule} from 'ngx-pipes';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import {NgPipesModule} from 'ngx-pipes';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    NgPipesModule
+    NgPipesModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [NoticeService,ApiService],
   bootstrap: [AppComponent]
