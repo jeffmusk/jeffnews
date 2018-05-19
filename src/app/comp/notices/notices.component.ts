@@ -4,7 +4,7 @@ import {ApiService} from '../../shared/service/api/api.service';
 import {Notice} from '../../shared/model/notice';
 import { ToastrService } from 'ngx-toastr';
 import {FormControl } from '@angular/forms';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-notices',
@@ -24,17 +24,16 @@ export class NoticesComponent implements OnInit {
     private apiService:ApiService) { }
 
   ngOnInit() {
+    this.loanding = true; 
     this.noticeService.getNotice();
     this.apiNoticeList = [];
     this.apiService.getApiNotice()
       .subscribe(n => {
         n.articles.forEach(notice => {
           this.apiNoticeList.push(notice) ;
+      	  this.loanding = false;
         })
       });
-      setTimeout(()=> {
-      	this.loanding = true; 
-      },1500);     
       this.currentSource = "Google News(ar)";
   }
 

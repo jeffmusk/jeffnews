@@ -1,4 +1,9 @@
-<div class="container">
+<div *ngIf="loanding" class="spinner-container" >
+		<mat-spinner color="warn" class="spinner" [diameter]="80" 
+		[strokeWidth]="3" [color]="dark"></mat-spinner>	
+</div>	
+
+<div class="container" *ngIf="!loanding" >
 	<div class="row">
 		<div class="col-12">
 			<h1 class="text-center">Noticias Guardadas</h1>

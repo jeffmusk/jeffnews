@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgPipesModule} from 'ngx-pipes';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatCardModule} from '@angular/material/card';
     NgPipesModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [NoticeService,ApiService],
   bootstrap: [AppComponent]

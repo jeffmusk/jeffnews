@@ -12,13 +12,14 @@ import {ReversePipe} from 'ngx-pipes';
 })
 export class AddNoticeComponent implements OnInit {
 saveNoticesList:Notice[];
-
+loanding:boolean;
 
   constructor(private noticeService:NoticeService,
     private toastr:ToastrService
     ) { }
   
   ngOnInit() {
+    this.loanding = true; 
     this.noticeService.getNotice()
       .snapshotChanges()
       .subscribe(notice => {
@@ -27,6 +28,7 @@ saveNoticesList:Notice[];
           var n = notice.payload.toJSON();
           n["$key"] = notice.key;
           this.saveNoticesList.push(n as Notice);
+          this.loanding = false;
         })
       });
   }
