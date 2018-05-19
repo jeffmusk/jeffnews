@@ -22,6 +22,8 @@ import {NgPipesModule} from 'ngx-pipes';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { RegistrationComponent } from './comp/sesion/registration/registration.component';
+import { LoginComponent } from './comp/sesion/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NavbarComponent,
     NoticesComponent,
     AddNoticeComponent,
-    Error404Component
+    Error404Component,
+    RegistrationComponent,
+    LoginComponent
     
   ],
   imports: [
