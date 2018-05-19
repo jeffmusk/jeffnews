@@ -5,6 +5,29 @@
 
 <div class="container">
 
+	<div class="row my-3 justify-content-center bg-dark">
+	  
+		<div class="col-xm-8">
+			<form>
+			  <div class="form-group">
+					<h4 class="text-white text-center">Fuente</h4>
+			    <select class="form-control" id="exampleFormControlSelect1">
+			      <option>Google News (Argentina)</option>
+			      <option (click)="onAlert(2)" >Hacker News (en)</option>
+			      <option>CNN (español)</option>
+			      <option>4</option>
+			      <option>5</option>
+			    </select>
+			  </div>
+			</form>
+		</div>
+		<div class="col-sm-12 my-auto ">
+			<button class="btn btn-info ">
+				Consultar
+			</button>
+		</div>
+	</div>
+
 	<div class="row justify-content-around">
 		<div class="card-continer mt-3 " *ngFor="let n of apiNoticeList" style="width: 19rem;" >
 				<div class="card  ml-2"  >
@@ -29,9 +52,7 @@
 					  <a [href]="n.url" target="_blank" class="btn btn-info btn-accion ">Mas...</a>				  	
 					  <a  class="btn btn-secondary btn-accion text-white"
 					  (click)="onSave(n)">Guardar</a>
-				  </div>
-
-				
+				  </div>			
 			</div>
 	</div>
 </div>

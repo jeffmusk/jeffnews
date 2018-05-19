@@ -37,6 +37,9 @@ export class NoticesComponent implements OnInit {
       },1500);
 	   
   }
+    onalert(n){
+      alert(n);
+    }
 
    onSave(n:Notice){
     this.noticeService.saveNotice(n);

@@ -28,18 +28,6 @@ export class NoticeService {
       });
    }
 
-   updateNotice(notice:Notice){
-      /*
-   	this.noticeList.update(notice.$key,{
-   		author:n.author,
-         title:n.title,
-         description:n.description,
-         url:n.url,
-         urlToImage:n.urlToImage,
-         publishedAt:n.publishedAt
-   	});*/
-   }
-
    deleteNotice($key:string){
    	this.noticeList.remove($key);
    }
