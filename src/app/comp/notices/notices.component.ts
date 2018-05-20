@@ -19,6 +19,7 @@ export class NoticesComponent implements OnInit {
   lastNotice;
   loanding:boolean;
   currentSource:string;
+  isLogin:boolean;
 
   constructor(private noticeService:NoticeService ,
     private toastr:ToastrService,
@@ -26,6 +27,14 @@ export class NoticesComponent implements OnInit {
     private loginService:LoginService) { }
 
   ngOnInit() {
+    this.loginService.currentUser().subscribe( auth => {
+      if (auth) {
+        this.isLogin = true;
+      }else {
+        this.isLogin = false;
+      }
+    });
+
     this.loanding = true; 
     this.noticeService.getNotice();
     this.apiNoticeList = [];
@@ -54,8 +63,14 @@ export class NoticesComponent implements OnInit {
 
 
    onSave(n:Notice){
-    this.noticeService.saveNotice(n);
-    this.toastr.success("correctamente","Noticia Guardada",{timeOut: 1200});
+     if (this.isLogin) { 
+       this.noticeService.saveNotice(n);
+       this.toastr.success("correctamente","Noticia Guardada",{timeOut: 1200});
+     } else {
+       this.toastr.warning("Inicie sesion para guardar noticias","",{timeOut: 6000, progressBar: true ,
+         closeButton: true, positionClass:"toast-top-center" });
+     }
+    
   }
 
 

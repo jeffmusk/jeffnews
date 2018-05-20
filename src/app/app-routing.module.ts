@@ -12,12 +12,11 @@ import {CanActivate} from "@angular/router";
 const routes: Routes = [
 	{	
 		path: "",
-		component: HomeComponent	
+		component: NoticesComponent	
 	},
 	{
 		path: "notices",
-		component: NoticesComponent,
-		canActivate: [AuthGuard]
+		component: NoticesComponent
 	},
 	{
 		path:"guardadas",

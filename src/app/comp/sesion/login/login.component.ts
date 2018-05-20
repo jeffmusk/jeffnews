@@ -36,9 +36,12 @@ export class LoginComponent implements OnInit {
   onClickGoogleLogin() {
     this.loginService.loginGoogle()
       .then((res) => {
+        this.flashMessages.show("Bienvenido", { cssClass: 'alert-success'
+         ,timeout: 4000});
         this.route.navigate(['/notices'])
       }).catch( err => {
-        this.flashMessages.show(err.message, {timeout: 4000});
+        this.flashMessages.show(err.message, {cssClass: 'alert-danger'
+          ,timeout: 4000});
       })
   }
 

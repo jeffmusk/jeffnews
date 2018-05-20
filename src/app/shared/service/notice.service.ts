@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Notice} from '../model/notice';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-
+import {LoginService} from '../../shared/service/auth/login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,14 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 export class NoticeService {
 	noticeList:AngularFireList<any>;
 	selectedNotice:Notice = new Notice();
-  isLogin:boolean;
-  constructor(private firebase:AngularFireDatabase) {
+
+  constructor(private firebase:AngularFireDatabase,
+    private login:LoginService) {
    }
+
+   ngOnInit() {
+
+  }
     getNotice(){
       this.noticeList = this.firebase.list("notice");
       return this.noticeList;
