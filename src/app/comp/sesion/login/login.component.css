@@ -50,3 +50,7 @@ body {
   color: white;
   width: 46%;
 }
+.col-center{
+    float: none;
+    margin: 0 auto;
+}

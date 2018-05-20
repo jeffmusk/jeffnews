@@ -5,17 +5,19 @@ import {AddNoticeComponent} from './comp/notices/add-notice/add-notice.component
 import {Error404Component} from './comp/error404/error404.component';
 import {LoginComponent} from './comp/sesion/login/login.component';
 import {RegistrationComponent} from './comp/sesion/registration/registration.component';
+import {HomeComponent} from './comp/home/home.component';
 import {AuthGuard} from './shared/guards/auth.guard';
 import {CanActivate} from "@angular/router";
 
 const routes: Routes = [
 	{	
 		path: "",
-		component: NoticesComponent	
+		component: HomeComponent	
 	},
 	{
 		path: "notices",
-		component: NoticesComponent
+		component: NoticesComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path:"guardadas",

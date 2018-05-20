@@ -8,8 +8,9 @@ import {Router} from '@angular/router'
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-	isLogin:boolean;
+	public isLogin:boolean;
 	nameUser:string;
+  fotoUser:string;
 	emailUser:string;
 
   constructor(private login:LoginService, private route:Router) { }
@@ -20,6 +21,8 @@ export class NavbarComponent implements OnInit {
   			this.isLogin = true;
   			this.nameUser = auth.displayName ;
   			this.emailUser =auth.email ;
+        this.fotoUser = auth.photoURL;
+        this.route.navigate(['/']);
   		}else {
   			this.isLogin = false;
   		}
@@ -27,9 +30,12 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogOut(){
+    this.isLogin = false;
+    this.nameUser = null;
+    this.emailUser =null ;
+    this.fotoUser = null;
   	this.login.logOut();
-    this.route.navigate(['/notices']);
-  	alert("Cerro Sesion");
+    this.route.navigate(['/']);
   }
 
 }

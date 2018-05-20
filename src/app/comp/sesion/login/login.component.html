@@ -3,18 +3,22 @@
 		<h2 class="form-signin-heading">Iniciar sesion</h2>
 		<input type="text" class="form-control" placeholder="Email" name="email"required autofocus [(ngModel)]="email" >
 		<input type="password" class="form-control mt-3" placeholder="Contraseña" name="password" required [(ngModel)]="password" >
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesion</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" >
+		Iniciar Sesion </button>
+
+	</form>
 
 		<div class="row">
-			<div class="col-12 mt-4 ">
-				<button class="btn btn btn-danger btn-google mr-2 pl-sm-2">
+			<div class="col-12 col-md-5 mt-4 col-center ">
+				<button class="btn btn btn-danger btn-google mr-2 pl-sm-2 " 
+				(click)="onClickGoogleLogin()">
 					<i class="fa fa-google">	Google </i>
 				</button>
-				<button class="btn btn btn-info btn-facebook mt-2 mt-md-0 ">
+				<button class="btn btn btn-info btn-facebook mt-md-0 "
+				>
 					<i class="fa fa-facebook"> Facebook </i>
 				</button>
+			</div>
 		</div>
-		</div>
-	</form>
 
 </div> <!-- /container -->

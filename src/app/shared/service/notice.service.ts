@@ -9,7 +9,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 export class NoticeService {
 	noticeList:AngularFireList<any>;
 	selectedNotice:Notice = new Notice();
-
+  isLogin:boolean;
   constructor(private firebase:AngularFireDatabase) {
    }
     getNotice(){

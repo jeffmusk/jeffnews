@@ -5,6 +5,7 @@ import {Notice} from '../../shared/model/notice';
 import { ToastrService } from 'ngx-toastr';
 import {FormControl } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {LoginService} from '../../shared/service/auth/login.service';
 
 @Component({
   selector: 'app-notices',
@@ -21,7 +22,8 @@ export class NoticesComponent implements OnInit {
 
   constructor(private noticeService:NoticeService ,
     private toastr:ToastrService,
-    private apiService:ApiService) { }
+    private apiService:ApiService,
+    private loginService:LoginService) { }
 
   ngOnInit() {
     this.loanding = true; 

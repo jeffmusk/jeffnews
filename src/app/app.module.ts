@@ -26,9 +26,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoginComponent } from './comp/sesion/login/login.component';
 import { RegistrationComponent } from './comp/sesion/registration/registration.component';
 import {AuthGuard} from './shared/guards/auth.guard';
-import { MyspaceComponent } from './comp/myspace/myspace.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { HomeComponent } from './comp/home/home.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
     Error404Component,
     RegistrationComponent,
     LoginComponent,
-    MyspaceComponent
+    HomeComponent,
+    
     
   ],
   imports: [

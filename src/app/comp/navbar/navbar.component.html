@@ -1,14 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <img src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png" alt="" class="minilogo"> 
-  <a class="navbar-brand" routerLink="/notices">JeffNews</a>
+  <img src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png" alt="" class="minilogo" *ngIf="!isLogin"> 
+  <img src="{{fotoUser}}" alt="avatar" class="avatar" *ngIf="fotoUser">
+
+  <ul class="navbar-nav " *ngIf="isLogin">
+    <li class="nav-item">
+        <span class="badge badge-pill badge-light">{{nameUser}}</span>
+      </li>
+  </ul>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+      
       <li class="nav-item ">
         <a class="nav-link active" routerLink="/notices" routerLinkActive="active" 
-         >Noticias <span class="sr-only">(current)</span></a>
+         >Noticias </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/guardadas" routerLinkActive="active">My Notices</a>
@@ -30,20 +37,23 @@
     <div class="row" *ngIf="!isLogin ; else logout">
       <div class="col-12">
         <div class="row ml-1">
-          <a class="btn btn-primary my-sm-0 login  text-white"  routerLink="/login">Login</a>
-          <a class="btn btn-secondary  my-sm-0 "  routerLink="/registration">Resgistrarse</a>
+          <button class="btn btn-primary my-sm-0 login  text-white"  routerLink="/login">Login</button>
+          <button class="btn btn-secondary  my-sm-0 mr-2"  routerLink="/registration">Resgistrarse</button>
         </div>
       </div>
-      <div class="col-12"></div>  
     </div>
 
     <ng-template #logout>
       <div class="row">
-        <div class="col-1 "></div>
-          <div class="col-12  mt-2">
-            <div class="row ml-1">
-              <a class="btn btn-danger btn-block text-white mr-4 " (click)="onLogOut()"  >Salir</a>
+        <div class="col-12  mt-2">
+          <div class="row">
+            <button class="btn btn-danger text-white px-4 mr-3" (click)="onLogOut()"  >Salir</button>
+          </div>
+          <div class="row">
+            <div class="row">
+              
             </div>
+          </div>
         </div>
       </div>
     </ng-template>
