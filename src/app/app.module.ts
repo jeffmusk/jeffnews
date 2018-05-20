@@ -25,6 +25,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoginComponent } from './comp/sesion/login/login.component';
 import { RegistrationComponent } from './comp/sesion/registration/registration.component';
+import {AuthGuard} from './shared/guards/auth.guard';
+import { MyspaceComponent } from './comp/myspace/myspace.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { RegistrationComponent } from './comp/sesion/registration/registration.c
     AddNoticeComponent,
     Error404Component,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    MyspaceComponent
     
   ],
   imports: [
@@ -52,9 +57,10 @@ import { RegistrationComponent } from './comp/sesion/registration/registration.c
     ReactiveFormsModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
-  providers: [NoticeService,ApiService],
+  providers: [NoticeService,ApiService , AuthGuard ,FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

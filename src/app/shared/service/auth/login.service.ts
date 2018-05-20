@@ -7,8 +7,8 @@ import 'rxjs/add/operator/map';
   providedIn: 'root'
 })
 export class LoginService {
-
-  constructor(private ngAuth:AngularFireAuth) { }
+  
+  constructor(public ngAuth:AngularFireAuth) { }
 
   registerUser(email:string,pass:string){
   	return new Promise((resolve,reject) => {

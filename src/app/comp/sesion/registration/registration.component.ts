@@ -17,8 +17,6 @@ export class RegistrationComponent implements OnInit {
   onSubmitAddUser(){
   	this.login.registerUser(this.email,this.password)
   	.then((res) => {
-  		console.log("Bien !!!!!");
-  		console.log(res);
   		this.route.navigate(['/notices']);
   	}).catch( err => {
   		console.log(err);

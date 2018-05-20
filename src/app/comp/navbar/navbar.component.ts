@@ -23,13 +23,12 @@ export class NavbarComponent implements OnInit {
   		}else {
   			this.isLogin = false;
   		}
-
-
   	});
   }
 
   onLogOut(){
   	this.login.logOut();
+    this.route.navigate(['/notices']);
   	alert("Cerro Sesion");
   }
 
