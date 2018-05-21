@@ -13,10 +13,10 @@ export class NavbarComponent implements OnInit {
   fotoUser:string;
 	emailUser:string;
 
-  constructor(private login:LoginService, private route:Router) { }
+  constructor(private loginService:LoginService, private route:Router) { }
 
   ngOnInit() {
-  	this.login.currentUser().subscribe( auth => {
+  	this.loginService.currentUser().subscribe( auth => {
   		if (auth) {
   			this.isLogin = true;
   			this.nameUser = auth.displayName ;
@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
     this.nameUser = null;
     this.emailUser =null ;
     this.fotoUser = null;
-  	this.login.logOut();
+  	this.loginService.logOut();
     this.route.navigate(['/']);
   }
 

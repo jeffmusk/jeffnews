@@ -9,6 +9,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  nameUser:string;
 	email:string;
 	password:string;
   constructor(private loginService:LoginService, private route:Router ,
@@ -34,17 +35,28 @@ export class LoginComponent implements OnInit {
   }
 
   onClickGoogleLogin() {
-    this.loginService.loginGoogle()
-      .then((res) => {
-        this.flashMessages.show("Bienvenido", { cssClass: 'alert-success'
+    this.loginService.currentUser().subscribe( auth => {
+      if (auth) {
+        this.nameUser = auth.displayName ;
+        this.flashMessages.show(`Bienvenido ${this.nameUser}.`, { cssClass: 'alert-success'
          ,timeout: 4000});
         this.route.navigate(['/notices'])
+        }
+    });
+
+    this.loginService.loginGoogle()
+      .then((res) => {
       }).catch( err => {
         this.flashMessages.show(err.message, {cssClass: 'alert-danger'
-          ,timeout: 4000});
+          ,timeout: 6000});
       })
   }
 
-  
+  onClickFacebookLogin() {
+    this.flashMessages.show("Estamos trabajando en ello", { cssClass: 'alert-success'
+         ,timeout: 4000});
+
+      }
+
 
 }
